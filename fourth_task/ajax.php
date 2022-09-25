@@ -1,6 +1,10 @@
 <?php
 $link = mysqli_connect("localhost", "root", "", "parse"); 
 if(empty($_POST['u3_input']) || empty($_POST['u5_input']) || empty($_POST['u8_input']) || !is_numeric($_POST['u3_input']) || !is_numeric($_POST['u5_input']) || !is_numeric($_POST['u8_input'])) echo 'Проверьте правильность заполнение формы';
+else
+if($_POST['u7_input'] != '<' && $_POST['u7_input'] != '>') echo 'Проверьте правильность заполнение формы';
+else
+if($_POST['u1_input'] != 'Стоимость, руб' && $_POST['u1_input'] != 'Стоимость опт, руб') echo 'Проверьте правильность заполнение формы';
 else{
     $sql = "SELECT * FROM exceltable where `". $_POST['u1_input'] ."` >= ". $_POST['u3_input'] ." and `". $_POST['u1_input'] ."` <= ". $_POST['u5_input'] ." and (`Наличие на складе 1, шт`+`Наличие на складе 2, шт`)". $_POST['u7_input'] .$_POST['u8_input'];
     echo $sql;
