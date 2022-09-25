@@ -1,6 +1,8 @@
 <?php
+
 require_once "PHPExcel.php";
 
+//что бы скрипт заработал нужно создать базу данных с именнем "parse" куда запарсятся данные
 $link = mysqli_connect("localhost", "root", "", "parse"); // Подключение к бд
 
 $excel = PHPExcel_IOFactory::load('./pricelist.xls'); // Excel файл

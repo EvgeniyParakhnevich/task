@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="" class="form-sizes">
+    <input type="number" class="input-width" value="100" min="0">
+    <input type="number" class="input-height" value="100" min="0">
+    <button type="submit">Submit</button>
+</form>
+<br /><br />
+
+<div id="result" style="width: 100px; height: 100px; background-color: #222222;"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $('.form-sizes').submit(function(e) {
+            e.preventDefault();
+
+            let width = $('.input-width').val();
+            let height = $('.input-height').val();
+
+            $('#result').css('width', width+'px');
+            $('#result').css('height', height+'px');
+        });
+    });
+</script>
+</body>
+</html>
